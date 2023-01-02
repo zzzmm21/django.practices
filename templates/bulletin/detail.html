@@ -29,6 +29,22 @@
             document.querySelector("#tr_edit").style.display = "table-row";
             document.querySelector("#tr_button").style.display = "none";
         }
+        function fn_modify_bulletin(frm, original_password, confirm_password){
+        	if(original_password != confirm_password){
+        	alert('비밀번호를 확인하세요');
+        	return false;
+        	}
+        	frm.action = "{% url 'bulletin_board:update' bulletin.id %}"
+        	frm.submit()
+        }
+         function fn_remove_bulletin(frm, original_password, confirm_password){
+        	if(original_password != confirm_password){
+        	alert('비밀번호를 확인하세요');
+        	return false;
+        	}
+        	frm.action = "{% url 'bulletin_board:delete' bulletin.id %}"
+        	frm.submit()
+        }
     </script>
 </head>
 <body>

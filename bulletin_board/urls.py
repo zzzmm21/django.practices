@@ -7,5 +7,7 @@ urlpatterns = [
     path('create/',views.create_bulletin, name='new_bulletin'),
     path('add/',views.add_bulletin, name='insert_bulletin'),
     path('<int:bulletin_id>/', views.view_bulletin, name='view'),
+    path('update/<int:bulletin_id>/', views.update_bulletin, name='update'),
+    path('delete/<int:bulletin_id>/', views.delete_bulletin, name='delete'),
 
 ]
