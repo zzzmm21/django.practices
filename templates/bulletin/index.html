@@ -32,7 +32,7 @@
                 <td style="width:50px">{{bulletin.name}}</td>
                 <td align='left' style="width:200px">
                     <span style="padding-right: 30px"></span>
-                    <a class='rm_underline' href="">{{bulletin.title}}</a>
+                    <a class='rm_underline' href="{% url 'bulletin_board:view' bulletin.id %}">{{bulletin.title}}</a>
                 </td>
                 <td style="width:100px">{{bulletin.writeDate}}</td>
             </tr>

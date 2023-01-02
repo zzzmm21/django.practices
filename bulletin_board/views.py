@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Bulletin
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -22,3 +22,6 @@ def add_bulletin(request):
 
     return HttpResponseRedirect(reverse('bulletin_board:index'))
 
+def view_bulletin(request, bulletin_id):
+    bulletin = get_object_or_404(Bulletin, pk=bulletin_id)
+    return render(request, 'bulletin/detail.html', {'bulletin':bulletin})
